@@ -65,3 +65,17 @@ Para decidir el tamaño de nuestro espacio Swap, debemos tener en cuenta tres fa
 * ⚡ **Si tienes un SSD y NO vas a hibernar:** El tamaño recomendado de la Swap suele ser de entre **2 GB y 8 GB** (dependiendo de cuánta RAM tengas).
 * 💤 **Si vas a usar hibernación:** El espacio de Swap debe ser obligatoriamente igual o mayor a tu memoria RAM física (normalmente entre un **25% y 50% más grande que tu RAM**), ya que el ordenador necesita guardar todo lo que tienes abierto dentro de la Swap antes de apagarse.
 * 🐢 **Si usas un disco mecánico (HDD):** El uso de la Swap será notablemente más lento, pero asignar **4 GB** funcionará bien como regla general para mantener el sistema estable.
+
+### /home (Carpeta de Usuarios)
+
+La partición `/home` es el espacio dedicado exclusivamente a los usuarios del sistema. Aquí es donde se crean tus carpetas personales de **Descargas, Documentos, Escritorio, Imágenes, Música y Vídeos**, además de los archivos de configuración de tus aplicaciones individuales (como los marcadores de tu navegador o los datos de tus juegos).
+
+Separar `/home` en una partición propia no es obligatorio, pero es una de las prácticas más recomendadas en Linux.
+
+---
+
+#### 🌟 ¿Por qué es buena idea crear una partición `/home` separada?
+
+* 🔄 **Formateos e instalaciones limpias sin perder nada:** Si en el futuro el sistema operativo se rompe o decides cambiar de distribución de Linux (por ejemplo, pasarte de Arch a Debian), puedes formatear la partición raíz (`/`) para reinstalar el sistema desde cero y dejar la partición `/home` intacta. Al iniciar el nuevo sistema, conservarás todos tus archivos personales y configuraciones exactamente como los dejaste.
+* 🛡️ **Seguridad para el sistema:** Si te quedas sin espacio en el disco descargando archivos grandes, solo se llenará la partición `/home`. La partición raíz (`/`) seguirá teniendo espacio libre, evitando que el sistema operativo colapse o deje de arrancar.
+* 💾 **Organización del almacenamiento:** Te permite, por ejemplo, instalar el sistema operativo en un disco rápido (como un SSD NVMe) y asignar la partición `/home` a un disco mecánico (HDD) de gran capacidad para almacenar tus archivos pesados.
