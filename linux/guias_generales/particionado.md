@@ -79,7 +79,7 @@ Por falta de espacio en esos 512 bytes del sector, MBR solo puede registrar un m
   ¿Qué pariciones crear?  
 ### 📂 Raíz (`/`)
 
-La primera que debemos crear es la partición **Raíz**, con el punto de montaje `/`. 
+La primera que debemos crear es la partición **Raíz**, con el punto de montaje `/`. Es bastante recomendable ponerla en una partición primaria.
 
 > [!IMPORTANT]
 > **¿Por qué debe ser la primera?** > En sistemas BIOS/MBR, la partición raíz (o en su defecto, la partición donde residen los archivos de arranque) actúa como el volumen de inicio (*Boot*). Por lo tanto, debe estar ubicada al principio del disco para asegurar que la BIOS pueda leerla sin inconvenientes y evitar problemas de arranque.
