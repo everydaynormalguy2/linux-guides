@@ -42,7 +42,8 @@ El tamaño que le asignaremos depende del uso que le vayamos a dar al sistema op
 *  **20 GB a 30 GB:** Es suficiente para distribuciones ligeras o si vas a instalar muy pocos programas.
 *  **40 GB a 60 GB:** Este es el punto ideal para la mayoría de usuarios. Te permite usar el sistema con total tranquilidad en el día a día.
 *  **80 GB a 100 GB:** Necesario para *gamers* o si planeas instalar entornos de desarrollo pesados (como *Android Studio*), herramientas de `Docker`, o si usas `Flatpak`/`Snap` con frecuencia (ya que estos formatos de paquetes empaquetan sus propias dependencias y ocupan mucho más espacio).
-
+  
+En esta partición generalmente usamos el sistema de archivos ext4.
 ### Swap
 
 La memoria **Swap** (o espacio de intercambio) es una zona de tu unidad de almacenamiento (SSD o HDD) que el sistema operativo Linux utiliza como una extensión de la memoria RAM física.
@@ -79,3 +80,5 @@ Separar `/home` en una partición propia no es obligatorio, pero es una de las p
 * 🔄 **Formateos e instalaciones limpias sin perder nada:** Si en el futuro el sistema operativo se rompe o decides cambiar de distribución de Linux (por ejemplo, pasarte de Arch a Debian), puedes formatear la partición raíz (`/`) para reinstalar el sistema desde cero y dejar la partición `/home` intacta. Al iniciar el nuevo sistema, conservarás todos tus archivos personales y configuraciones exactamente como los dejaste.
 * 🛡️ **Seguridad para el sistema:** Si te quedas sin espacio en el disco descargando archivos grandes, solo se llenará la partición `/home`. La partición raíz (`/`) seguirá teniendo espacio libre, evitando que el sistema operativo colapse o deje de arrancar.
 * 💾 **Organización del almacenamiento:** Te permite, por ejemplo, instalar el sistema operativo en un disco rápido (como un SSD NVMe) y asignar la partición `/home` a un disco mecánico (HDD) de gran capacidad para almacenar tus archivos pesados.
+
+En esta partición generalmente usamos el sistema de archivos ext4.
