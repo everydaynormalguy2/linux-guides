@@ -1,4 +1,8 @@
 Aquí vamos a hablar sobre cómo hacer las particiones, cada herramienta de particionado tiene su propia guía.
+En esta sección encontrarás las guías detalladas para realizar el proceso. Puedes elegir la herramienta que mejor se adapte a tu nivel de experiencia:
+
+* 🖥️ **Guía de `cfdisk` (Recomendado):** Una interfaz basada en texto (TUI) con menús interactivos. Es la opción ideal si buscas un proceso visual, intuitivo y con menor riesgo de equivocarte.
+* ⌨️ **Guía de `fdisk` (Avanzado):** La herramienta clásica de Linux que se maneja puramente a través de comandos en la terminal. Ideal si prefieres un control absoluto y directo.
 
 ---
 
@@ -32,7 +36,46 @@ Si no sabes qué sistema usa tu ordenador, este comando funciona en todas las di
 
 ---
 
-En esta sección encontrarás las guías detalladas para realizar el proceso. Puedes elegir la herramienta que mejor se adapte a tu nivel de experiencia:
+Ahora hablemos sobre cada sistema.
 
-* 🖥️ **Guía de `cfdisk` (Recomendado):** Una interfaz basada en texto (TUI) con menús interactivos. Es la opción ideal si buscas un proceso visual, intuitivo y con menor riesgo de equivocarte.
-* ⌨️ **Guía de `fdisk` (Avanzado):** La herramienta clásica de Linux que se maneja puramente a través de comandos en la terminal. Ideal si prefieres un control absoluto y directo.
+# BIOS / MBR
+
+## 💾 ¿Qué es BIOS? (Basic Input/Output System)
+
+La **BIOS** es un firmware (un software básico) integrado en un chip de la placa base de tu ordenador. Cuando pulsas el botón de encendido, la BIOS es lo primero que se despierta.
+
+* **Su función principal:** Realiza un chequeo rápido del hardware (llamado *POST*) para comprobar que la memoria RAM, el procesador y los discos funcionen correctamente.
+* **El arranque:** Una vez que todo está en orden, la BIOS busca un disco que tenga un sector de arranque para cederle el control y que empiece a cargar el sistema operativo.
+
+---
+
+## 🛠️ ¿Qué es MBR? (Master Boot Record)
+
+El **MBR** es el sistema de tabla de particiones que utiliza la BIOS. Es literalmente el **primer sector** de tu disco duro (el sector `0`) y mide apenas 512 bytes.
+
+Dentro de esos 512 bytes, el MBR guarda tres cosas cruciales:
+* **El código de arranque principal (*Bootloader*):** Las instrucciones para que el ordenador sepa dónde está el sistema operativo.
+* **La tabla de particiones:** El mapa que le dice al ordenador cómo está dividido el disco.
+* **La firma de arranque:** Un código que confirma que el sector no está dañado.
+
+---
+
+## ⚠️ Limitaciones Importantes de BIOS/MBR
+
+Al ser una tecnología diseñada en la década de 1980, MBR tiene dos limitaciones muy importantes hoy en día:
+
+### 1. El límite de 2 Terabytes (2 TB)
+Debido a la forma en que MBR calcula el tamaño del disco (usando direcciones de 32 bits), **no puede reconocer más de 2 TB de espacio**. Si instalas un disco de 4 TB en un sistema MBR, 2 TB se quedarán completamente inutilizables.
+
+### 2. Máximo 4 particiones primarias
+Por falta de espacio en esos 512 bytes del sector, MBR solo puede registrar un máximo de **4 particiones primarias**.
+
+> [!WARNING]
+> Si necesitas crear más divisiones (por ejemplo, para tener varios sistemas operativos o separar tus datos), tienes que recurrir a un truco:
+> 1. Sacrificar una partición primaria para convertirla en una **partición extendida**.
+> 2. Dentro de esa partición extendida, puedes crear múltiples **particiones lógicas** (que actúan como subparticiones).
+
+  
+
+
+
