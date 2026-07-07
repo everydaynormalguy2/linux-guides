@@ -7,10 +7,10 @@ El particionado es el proceso de dividir tu unidad de almacenamiento (SSD o HDD)
 
 Dividimos esta guía en dos secciones según la Bios/Firmware de la placa base, es decir, si la computadora arranca usando el sistema antiguo BIOS/MBR o el sistema moderno UEFI/GPT.
 
-Si no sabes que sistema usa tu ordenador, este comando funcioona en todas las distribuciones de linux:
-´´´bash
+Si no sabes qué sistema usa tu ordenador, este comando funciona en todas las distribuciones de Linux:
+
+```bash
 [ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
-´´´
 
 En esta sección encontrarás las guías detalladas para realizar el proceso. Puedes elegir la herramienta que mejor se adapte a tu nivel de experiencia:
 
