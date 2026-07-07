@@ -1,3 +1,5 @@
+En esta guía nos centraremos solo en sistemas de 64 bits ya que Arch no ofrece una versión oficial para versiones de 32 bits.
+
 # Paso 1: El Menú de Arranque (Boot Menu)
 
 Al encender la computadora con el USB de instalación de Arch Linux conectado, lo primero que verás en pantalla es este menú. Desde aquí seleccionaremos cómo queremos que arranque el instalador.
