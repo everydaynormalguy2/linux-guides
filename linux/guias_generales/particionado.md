@@ -3,7 +3,8 @@ En esta sección encontrarás las guías detalladas para realizar el proceso. Pu
 
 * 🖥️ **Guía de `cfdisk` (Recomendado):** Una interfaz basada en texto (TUI) con menús interactivos. Es la opción ideal si buscas un proceso visual, intuitivo y con menor riesgo de equivocarte.
 * ⌨️ **Guía de `fdisk` (Avanzado):** La herramienta clásica de Linux que se maneja puramente a través de comandos en la terminal. Ideal si prefieres un control absoluto y directo.
-
+>[!NOTA]
+>En esta guía haremos las particiones separando las particiones Raiz(/) y home, aunque se puede hacer todo en una, no es lo recomendable.
 ---
 
 # Guía de Particionado de Discos
@@ -75,7 +76,16 @@ Por falta de espacio en esos 512 bytes del sector, MBR solo puede registrar un m
 > 1. Sacrificar una partición primaria para convertirla en una **partición extendida**.
 > 2. Dentro de esa partición extendida, puedes crear múltiples **particiones lógicas** (que actúan como subparticiones).
 
-  
+  ¿Qué pariciones crear?  
+### 📂 Raíz (`/`)
+
+La primera que debemos crear es la partición **Raíz**, con el punto de montaje `/`. 
+
+> [!IMPORTANT]
+> **¿Por qué debe ser la primera?** > En sistemas BIOS/MBR, la partición raíz (o en su defecto, la partición donde residen los archivos de arranque) actúa como el volumen de inicio (*Boot*). Por lo tanto, debe estar ubicada al principio del disco para asegurar que la BIOS pueda leerla sin inconvenientes y evitar problemas de arranque.
+
+En esta partición se instalan todos los **archivos del sistema**, las aplicaciones, las configuraciones globales del entorno y los controladores necesarios para el correcto funcionamiento del sistema operativo Linux.
+
 
 
 
