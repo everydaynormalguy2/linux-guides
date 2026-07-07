@@ -11,6 +11,7 @@ Si no sabes qué sistema usa tu ordenador, este comando funciona en todas las di
 
 ```bash
 [ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
+```
 
 En esta sección encontrarás las guías detalladas para realizar el proceso. Puedes elegir la herramienta que mejor se adapte a tu nivel de experiencia:
 
