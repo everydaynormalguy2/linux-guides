@@ -1,11 +1,11 @@
 # Paso 1: El Menú de Arranque (Boot Menu)
 
-Al encender la computadora con el USB de instalación de Arch Linux conectado, lo primero que verás en pantalla es este menú. No te asustes por el diseño retro; desde aquí seleccionaremos cómo queremos que arranque el instalador.
+Al encender la computadora con el USB de instalación de Arch Linux conectado, lo primero que verás en pantalla es este menú. Desde aquí seleccionaremos cómo queremos que arranque el instalador.
 
 <img width="632" height="475" alt="Screenshot_20260706_135702" src="https://github.com/user-attachments/assets/9b5fd664-c7cf-4e2f-b485-127ddbf35ad2" />
 
 
-### 📋 Desglose de opciones del menú
+### Desglose de opciones del menú
 
 * **`Arch Linux install medium (x86_64, BIOS)`**
   Esta es la opción principal y la que debes elegir en la mayoría de los casos. Carga el entorno de instalación estándar para procesadores de 64 bits.
