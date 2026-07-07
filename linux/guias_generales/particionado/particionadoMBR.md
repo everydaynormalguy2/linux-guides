@@ -41,3 +41,11 @@ El tamaño que le asignaremos depende del uso que le vayamos a dar al sistema op
 *  **20 GB a 30 GB:** Es suficiente para distribuciones ligeras o si vas a instalar muy pocos programas.
 *  **40 GB a 60 GB:** Este es el punto ideal para la mayoría de usuarios. Te permite usar el sistema con total tranquilidad en el día a día.
 *  **80 GB a 100 GB:** Necesario para *gamers* o si planeas instalar entornos de desarrollo pesados (como *Android Studio*), herramientas de `Docker`, o si usas `Flatpak`/`Snap` con frecuencia (ya que estos formatos de paquetes empaquetan sus propias dependencias y ocupan mucho más espacio).
+
+### Swap
+La memoria Swap (o espacio de intercambio) es una zona de tu unidad de almacenamiento (SSD o HDD) que el sistema operativo Linux utiliza como una extensión de la memoria RAM física.
+Cuando la memoria RAM esta llena, el ordenador busca procesos que no estes usando en ese momento para transferirlos a la memoria swap. Esta es mucho más lenta que la RAM, pero evita que el ordenador se bloquee o cierre algo a la fuerza. Su función principal aquí no es expandir tu RAM de forma masiva, sino actuar como una red de seguridad para que el sistema no se congele.
+
+Esta es una partición opcional ya que una vez instalado el sistema operativo, podemos crear un Swapfile, que es un archivo, no una partición, pero funciona igual y es mucho mas fácil de redimensionar sin riesgos.
+
+Para saber el tamaño de nuestra memoria Swap, debemos tener en cuenta tres factores; el tamaño de nuestra RAM, si nuestro disco duro es HDD o SSD, y si vamos a hacer hibernación.
