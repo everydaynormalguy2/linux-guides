@@ -13,7 +13,8 @@ Si no sabes qué sistema usa tu ordenador, este comando funciona en todas las di
 [ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS"
 ```
 ¿Qué hace este comando?
-Desglose paso a paso
+
+Desglose paso a paso:
 
     [ -d /sys/firmware/efi ] (La Condición)
 
@@ -35,10 +36,8 @@ Desglose paso a paso
 
         echo "BIOS": Muestra la palabra "BIOS" en la pantalla. Se ejecutará si el directorio no existe (lo que significa que el sistema no es UEFI).
 
-
-
 En esta sección encontrarás las guías detalladas para realizar el proceso. Puedes elegir la herramienta que mejor se adapte a tu nivel de experiencia:
 
-* 🖥️ **[Guía de cfdisk (Recomendado)](./cfdisk.md)**: Una interfaz basada en texto (TUI) con menús interactivos. Es la opción ideal si buscas un proceso visual, intuitivo y con menor riesgo de equivocarte.
-* ⌨️ **[Guía de fdisk (Avanzado)](./fdisk.md)**: La herramienta clásica de Linux que se maneja puramente a través de comandos en la terminal. Ideal si prefieres un control absoluto y directo.
+    🖥️ Guía de cfdisk (Recomendado): Una interfaz basada en texto (TUI) con menús interactivos. Es la opción ideal si buscas un proceso visual, intuitivo y con menor riesgo de equivocarte.
 
+    ⌨️ Guía de fdisk (Avanzado): La herramienta clásica de Linux que se maneja puramente a través de comandos en la terminal. Ideal si prefieres un control absoluto y directo.
