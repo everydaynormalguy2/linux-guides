@@ -25,6 +25,7 @@ Por falta de espacio en esos 512 bytes del sector, MBR solo puede registrar un m
 > 2. Dentro de esa partición extendida, puedes crear múltiples **particiones lógicas** (que actúan como subparticiones).
 
   ¿Qué pariciones crear?  
+  Un ejemplo general es crear una partición Raíz, otra de home, y una Swap (opcional).
 ### 📂 Raíz (`/`)
 
 La primera que debemos crear es la partición **Raíz**, con el punto de montaje `/`. Es bastante recomendable ponerla en una partición primaria.
