@@ -43,9 +43,24 @@ El tamaño que le asignaremos depende del uso que le vayamos a dar al sistema op
 *  **80 GB a 100 GB:** Necesario para *gamers* o si planeas instalar entornos de desarrollo pesados (como *Android Studio*), herramientas de `Docker`, o si usas `Flatpak`/`Snap` con frecuencia (ya que estos formatos de paquetes empaquetan sus propias dependencias y ocupan mucho más espacio).
 
 ### Swap
-La memoria Swap (o espacio de intercambio) es una zona de tu unidad de almacenamiento (SSD o HDD) que el sistema operativo Linux utiliza como una extensión de la memoria RAM física.
-Cuando la memoria RAM esta llena, el ordenador busca procesos que no estes usando en ese momento para transferirlos a la memoria swap. Esta es mucho más lenta que la RAM, pero evita que el ordenador se bloquee o cierre algo a la fuerza. Su función principal aquí no es expandir tu RAM de forma masiva, sino actuar como una red de seguridad para que el sistema no se congele.
 
-Esta es una partición opcional ya que una vez instalado el sistema operativo, podemos crear un Swapfile, que es un archivo, no una partición, pero funciona igual y es mucho mas fácil de redimensionar sin riesgos.
+La memoria **Swap** (o espacio de intercambio) es una zona de tu unidad de almacenamiento (SSD o HDD) que el sistema operativo Linux utiliza como una extensión de la memoria RAM física.
 
-Para saber el tamaño de nuestra memoria Swap, debemos tener en cuenta tres factores; el tamaño de nuestra RAM, si nuestro disco duro es HDD o SSD, y si vamos a hacer hibernación.
+Cuando la memoria RAM está llena, el ordenador busca procesos que no estés usando en ese momento para transferirlos a la memoria swap. Esta es mucho más lenta que la RAM, pero evita que el ordenador se bloquee o cierre programas a la fuerza. Su función principal aquí no es expandir tu RAM de forma masiva, sino actuar como una **red de seguridad** para que el sistema no se congele.
+
+> [!NOTE]
+> Esta es una partición **opcional**, ya que una vez instalado el sistema operativo podemos crear un **Swapfile**. El Swapfile es un archivo (no una partición) que funciona exactamente igual y es mucho más fácil de redimensionar en el futuro sin correr riesgos con los datos del disco.
+
+---
+
+#### 📊 ¿Cómo calcular el tamaño de la memoria Swap?
+
+Para decidir el tamaño de nuestro espacio Swap, debemos tener en cuenta tres factores principales:
+1. El tamaño de nuestra memoria **RAM** física.
+2. Si nuestro disco duro es un **HDD** (mecánico) o un **SSD** (sólido).
+3. Si vamos a utilizar la función de **hibernación**.
+
+**Recomendaciones generales:**
+* ⚡ **Si tienes un SSD y NO vas a hibernar:** El tamaño recomendado de la Swap suele ser de entre **2 GB y 8 GB** (dependiendo de cuánta RAM tengas).
+* 💤 **Si vas a usar hibernación:** El espacio de Swap debe ser obligatoriamente igual o mayor a tu memoria RAM física (normalmente entre un **25% y 50% más grande que tu RAM**), ya que el ordenador necesita guardar todo lo que tienes abierto dentro de la Swap antes de apagarse.
+* 🐢 **Si usas un disco mecánico (HDD):** El uso de la Swap será notablemente más lento, pero asignar **4 GB** funcionará bien como regla general para mantener el sistema estable.
