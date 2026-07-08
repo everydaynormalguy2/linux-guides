@@ -2,7 +2,7 @@
 
 Un sistema de archivos es el método que utiliza un sistema operativo para organizar, almacenar y nombrar los datos dentro de una unidad de almacenamiento. En Linux, no solo guardan datos, sino que gestionan los **permisos de seguridad** del sistema (quién puede leer, escribir o ejecutar un archivo).
 
-Los siguientes sistemas de archivos son los que utilizaremos para dar formato a nuestras particiones como Raíz (`/`) o `/home`:
+Los siguientes tres sistemas de archivos son los que utilizaremos para dar formato a nuestras particiones como Raíz (`/`) o `/home`:
 
 ### 1. `ext4` (Fourth Extended Filesystem)
 Es el estándar absoluto y la opción por defecto en el 90% de las distribuciones (como Ubuntu, Debian o Mint).
@@ -19,7 +19,12 @@ Es un sistema de archivos de alto rendimiento optimizado para servidores y grand
 * **¿Cómo funciona?** Está diseñado para el procesamiento en paralelo. Es increíblemente rápido manejando archivos gigantescos (de varios Terabytes) y grandes volúmenes de datos simultáneos.
 * **¿Cuándo usarlo?** En servidores de bases de datos, almacenamiento masivo o si vas a montar un servidor de archivos en casa. Para un ordenador de escritorio normal, es mejor optar por `ext4` o `Btrfs`.
 
+También hay que mecionar al Swap:
+### 4. `swap` (Sistema de archivos de intercambio)
+A diferencia de los anteriores, no es un sistema de archivos para almacenar tus fotos o documentos, sino un formato especial estructurado para que el Kernel de Linux lo use como memoria virtual.
+* **¿Cómo funciona?** Prepara el espacio del disco para que los datos de la memoria RAM física puedan volcarse en él de forma ultrarrápida cuando el sistema se quede sin memoria.
+* **¿Cuándo usarlo?** Únicamente si decidiste crear una **partición Swap** dedicada en lugar de usar un *Swapfile*. Esta partición no se formatea con `ext4`, sino con su propio formato de intercambio.
 ---
 
 ### 💡 El único "intruso" obligatorio: `FAT32`
-También hay que hacer una mención obligatoria a **`FAT32`** (o `vfat`), ya que sirve exclusivamente para crear la **partición EFI (Boot)** en sistemas modernos con UEFI. Las placas base y los sistemas de arranque de la placa no saben leer sistemas de archivos nativos de Linux como `ext4`.
+También hay que hacer una mención obligatoria a **`FAT32`** (o `vfat`), ya que sirve exclusivamente para crear la **partición EFI (Boot)**, las placas base modernas con UEFI son las que exigen FAT32. Las placas antiguas con BIOS directamente no leen sistemas de archivos (leen el código binario del MBR directamente).
