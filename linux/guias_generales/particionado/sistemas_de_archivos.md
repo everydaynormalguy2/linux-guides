@@ -20,10 +20,10 @@ Es un sistema de archivos de alto rendimiento optimizado para servidores y grand
 * **¿Cuándo usarlo?** En servidores de bases de datos, almacenamiento masivo o si vas a montar un servidor de archivos en casa. Para un ordenador de escritorio normal, es mejor optar por `ext4` o `Btrfs`.
 
 > 💡 **Nota**
-> Si tu sistema operativo usa predeterminadamente un sitema de archivos, y tu quieres utilizar otro, asegurate de que tu sistema operativo tenga soporte para ese sistema de archivos. 
+> Si tu sistema operativo usa predeterminadamente un sistema de archivos, y tu quieres utilizar otro, asegúrate de que tu sistema operativo tenga soporte para ese sistema de archivos. 
 
-También hay que mecionar al Swap:
-### 4. `swap` (Sistema de archivos de intercambio)
+También hay que mecionar al Swap, aunque no sea un sistema de achivos:
+### 4. `swap` 
 A diferencia de los anteriores, no es un sistema de archivos para almacenar tus fotos o documentos, sino un formato especial estructurado para que el Kernel de Linux lo use como memoria virtual.
 * **¿Cómo funciona?** Prepara el espacio del disco para que los datos de la memoria RAM física puedan volcarse en él de forma ultrarrápida cuando el sistema se quede sin memoria.
 * **¿Cuándo usarlo?** Únicamente si decidiste crear una **partición Swap** dedicada en lugar de usar un *Swapfile*. Esta partición no se formatea con `ext4`, sino con su propio formato de intercambio.
