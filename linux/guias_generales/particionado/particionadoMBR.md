@@ -62,11 +62,25 @@ Para decidir el tamaño de nuestro espacio Swap, debemos tener en cuenta tres fa
 2. Si nuestro disco duro es un **HDD** (mecánico) o un **SSD** (sólido).
 3. Si vamos a utilizar la función de **hibernación**.
 
-**Recomendaciones generales:**
-* ⚡ **Si tienes un SSD y NO vas a hibernar:** El tamaño recomendado de la Swap suele ser de entre **2 GB y 8 GB** (dependiendo de cuánta RAM tengas).
-* 💤 **Si vas a usar hibernación:** El espacio de Swap debe ser obligatoriamente igual o mayor a tu memoria RAM física (normalmente entre un **25% y 50% más grande que tu RAM**), ya que el ordenador necesita guardar todo lo que tienes abierto dentro de la Swap antes de apagarse.
-* 🐢 **Si usas un disco mecánico (HDD):** El uso de la Swap será notablemente más lento, pero asignar **4 GB** funcionará bien como regla general para mantener el sistema estable.
+### 📊 Tamaño de la Swap (Adaptación de recomendaciones de Red Hat y Canonical)
 
+Para decidir el tamaño de tu espacio Swap, busca tu cantidad de memoria RAM física y elige la opción según si vas a usar o no la **hibernación**:
+
+- **Si tienes 2 GB de RAM o menos:**
+  - **SIN hibernación:** Asigna el doble de tu RAM (ej. `4 GB`).
+  - **CON hibernación:** Asigna el triple de tu RAM (ej. `6 GB`).
+
+- **Si tienes entre 2 GB y 8 GB de RAM:**
+  - **SIN hibernación:** Asigna el mismo tamaño que tu RAM (ej. si tienes 4 GB de RAM, pon `4 GB` de Swap).
+  - **CON hibernación:** Asigna el doble de tu RAM.
+
+- **Si tienes entre 8 GB y 64 GB de RAM:**
+  - **SIN hibernación:** Asigna un tamaño fijo de **`4 GB`** (es el "colchón" de seguridad ideal).
+  - **CON hibernación:** Asigna `1.5` veces el tamaño de tu RAM (ej. si tienes 16 GB de RAM, pon `24 GB` de Swap).
+
+- **Si tienes más de 64 GB de RAM:**
+  - **SIN hibernación:** No es necesaria, aunque se recomienda dejar **`4 GB`** por pura seguridad del sistema.
+  - **CON hibernación:** Asigna `1.5` veces el tamaño de tu RAM.
 ### /home (Carpeta de Usuarios)
 
 La partición `/home` es el espacio dedicado exclusivamente a los usuarios del sistema. Aquí es donde se crean tus carpetas personales de **Descargas, Documentos, Escritorio, Imágenes, Música y Vídeos**, además de los archivos de configuración de tus aplicaciones individuales (como los marcadores de tu navegador o los datos de tus juegos).
