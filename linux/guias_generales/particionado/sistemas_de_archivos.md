@@ -31,3 +31,5 @@ A diferencia de los anteriores, no es un sistema de archivos para almacenar tus 
 
 ### 💡 El único "intruso" obligatorio: `FAT32`
 También hay que hacer una mención obligatoria a **`FAT32`** (o `vfat`), ya que sirve exclusivamente para crear la **partición EFI (Boot)**, las placas base modernas con UEFI son las que exigen FAT32. Las placas antiguas con BIOS directamente no leen sistemas de archivos (leen el código binario del MBR directamente).
+> **Nota**
+>En sistemas antiguos con BIOS, el gestor de arranque (GRUB) se instala en el MBR y suele leer directamente el kernel desde una partición formateada en ext4.
